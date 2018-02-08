@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  FriendsViewController.h
 //  VKFriends
 //
 //  Created by VLADIMIR on 2/8/18.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface FriendsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @end
-
