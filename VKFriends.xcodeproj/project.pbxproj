@@ -1,0 +1,398 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EC3B245211452DE86A523FA6 /* libPods-VKFriends.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F471A65F08AA1F2E05100805 /* libPods-VKFriends.a */; };
+		F584D4F2202CCD3C00CD6B61 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F584D4F1202CCD3C00CD6B61 /* main.m */; };
+		F584D4F5202CCD3C00CD6B61 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F584D4F4202CCD3C00CD6B61 /* AppDelegate.m */; };
+		F584D4F8202CCD3C00CD6B61 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F584D4F7202CCD3C00CD6B61 /* ViewController.m */; };
+		F584D4FB202CCD3C00CD6B61 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F584D4F9202CCD3C00CD6B61 /* Main.storyboard */; };
+		F584D4FD202CCD3C00CD6B61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F584D4FC202CCD3C00CD6B61 /* Assets.xcassets */; };
+		F584D500202CCD3C00CD6B61 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F584D4FE202CCD3C00CD6B61 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2C314B44A2F1456034234CE2 /* Pods-VKFriends.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VKFriends.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VKFriends/Pods-VKFriends.debug.xcconfig"; sourceTree = "<group>"; };
+		C5EC88DCFE21484F53A41A64 /* Pods-VKFriends.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VKFriends.release.xcconfig"; path = "Pods/Target Support Files/Pods-VKFriends/Pods-VKFriends.release.xcconfig"; sourceTree = "<group>"; };
+		F471A65F08AA1F2E05100805 /* libPods-VKFriends.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-VKFriends.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F584D4ED202CCD3C00CD6B61 /* VKFriends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VKFriends.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F584D4F1202CCD3C00CD6B61 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F584D4F3202CCD3C00CD6B61 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F584D4F4202CCD3C00CD6B61 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F584D4F6202CCD3C00CD6B61 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		F584D4F7202CCD3C00CD6B61 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		F584D4FA202CCD3C00CD6B61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F584D4FC202CCD3C00CD6B61 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F584D4FF202CCD3C00CD6B61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F584D501202CCD3C00CD6B61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F584D4EA202CCD3B00CD6B61 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC3B245211452DE86A523FA6 /* libPods-VKFriends.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6D912B0D6277C9CBD62D8EBC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2C314B44A2F1456034234CE2 /* Pods-VKFriends.debug.xcconfig */,
+				C5EC88DCFE21484F53A41A64 /* Pods-VKFriends.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F0AA9D111A9CAB51167936D0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F471A65F08AA1F2E05100805 /* libPods-VKFriends.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F584D4E4202CCD3B00CD6B61 = {
+			isa = PBXGroup;
+			children = (
+				F584D4EF202CCD3C00CD6B61 /* VKFriends */,
+				F584D4EE202CCD3C00CD6B61 /* Products */,
+				6D912B0D6277C9CBD62D8EBC /* Pods */,
+				F0AA9D111A9CAB51167936D0 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		F584D4EE202CCD3C00CD6B61 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F584D4ED202CCD3C00CD6B61 /* VKFriends.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F584D4EF202CCD3C00CD6B61 /* VKFriends */ = {
+			isa = PBXGroup;
+			children = (
+				F584D4F3202CCD3C00CD6B61 /* AppDelegate.h */,
+				F584D4F4202CCD3C00CD6B61 /* AppDelegate.m */,
+				F584D4F6202CCD3C00CD6B61 /* ViewController.h */,
+				F584D4F7202CCD3C00CD6B61 /* ViewController.m */,
+				F584D4F9202CCD3C00CD6B61 /* Main.storyboard */,
+				F584D4FC202CCD3C00CD6B61 /* Assets.xcassets */,
+				F584D4FE202CCD3C00CD6B61 /* LaunchScreen.storyboard */,
+				F584D501202CCD3C00CD6B61 /* Info.plist */,
+				F584D4F0202CCD3C00CD6B61 /* Supporting Files */,
+			);
+			path = VKFriends;
+			sourceTree = "<group>";
+		};
+		F584D4F0202CCD3C00CD6B61 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F584D4F1202CCD3C00CD6B61 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F584D4EC202CCD3B00CD6B61 /* VKFriends */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F584D504202CCD3C00CD6B61 /* Build configuration list for PBXNativeTarget "VKFriends" */;
+			buildPhases = (
+				87F31BB48F02B31C601510CA /* [CP] Check Pods Manifest.lock */,
+				F584D4E9202CCD3B00CD6B61 /* Sources */,
+				F584D4EA202CCD3B00CD6B61 /* Frameworks */,
+				F584D4EB202CCD3B00CD6B61 /* Resources */,
+				54C7F274F83CC4B3E8D68D9E /* [CP] Embed Pods Frameworks */,
+				91BCE73F8D3122A323BC70CD /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VKFriends;
+			productName = VKFriends;
+			productReference = F584D4ED202CCD3C00CD6B61 /* VKFriends.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F584D4E5202CCD3B00CD6B61 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = ALEXANDER;
+				TargetAttributes = {
+					F584D4EC202CCD3B00CD6B61 = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = F584D4E8202CCD3B00CD6B61 /* Build configuration list for PBXProject "VKFriends" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F584D4E4202CCD3B00CD6B61;
+			productRefGroup = F584D4EE202CCD3C00CD6B61 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F584D4EC202CCD3B00CD6B61 /* VKFriends */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F584D4EB202CCD3B00CD6B61 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F584D500202CCD3C00CD6B61 /* LaunchScreen.storyboard in Resources */,
+				F584D4FD202CCD3C00CD6B61 /* Assets.xcassets in Resources */,
+				F584D4FB202CCD3C00CD6B61 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		54C7F274F83CC4B3E8D68D9E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VKFriends/Pods-VKFriends-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		87F31BB48F02B31C601510CA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VKFriends-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		91BCE73F8D3122A323BC70CD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VKFriends/Pods-VKFriends-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F584D4E9202CCD3B00CD6B61 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F584D4F8202CCD3C00CD6B61 /* ViewController.m in Sources */,
+				F584D4F5202CCD3C00CD6B61 /* AppDelegate.m in Sources */,
+				F584D4F2202CCD3C00CD6B61 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F584D4F9202CCD3C00CD6B61 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F584D4FA202CCD3C00CD6B61 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F584D4FE202CCD3C00CD6B61 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F584D4FF202CCD3C00CD6B61 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F584D502202CCD3C00CD6B61 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F584D503202CCD3C00CD6B61 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F584D505202CCD3C00CD6B61 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C314B44A2F1456034234CE2 /* Pods-VKFriends.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = VKFriends/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = alexx.VKFriends;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F584D506202CCD3C00CD6B61 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C5EC88DCFE21484F53A41A64 /* Pods-VKFriends.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = VKFriends/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = alexx.VKFriends;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F584D4E8202CCD3B00CD6B61 /* Build configuration list for PBXProject "VKFriends" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F584D502202CCD3C00CD6B61 /* Debug */,
+				F584D503202CCD3C00CD6B61 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F584D504202CCD3C00CD6B61 /* Build configuration list for PBXNativeTarget "VKFriends" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F584D505202CCD3C00CD6B61 /* Debug */,
+				F584D506202CCD3C00CD6B61 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F584D4E5202CCD3B00CD6B61 /* Project object */;
+}
