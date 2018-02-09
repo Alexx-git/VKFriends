@@ -7,10 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "VKSdk.h"
 
 @interface DataManager : NSObject
 
 +(DataManager *)sharedInstance;
--(void)loadItems;
+-(void)loadFriendsWithCompletion:(void (^)(VKResponse *))completeion;
 
 @end

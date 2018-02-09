@@ -8,6 +8,8 @@
 
 #import "DataManager.h"
 
+static NSString *const ALL_USER_FIELDS = @"id,first_name,last_name,sex,bdate,city,country,photo_50,photo_100,photo_200_orig,photo_200,photo_400_orig,photo_max,photo_max_orig,online,online_mobile,lists,domain,has_mobile,contacts,connections,site,education,universities,schools,can_post,can_see_all_posts,can_see_audio,can_write_private_message,status,last_seen,common_count,relation,relatives,counters";
+
 @implementation DataManager
 
 +(DataManager *)sharedInstance
@@ -22,9 +24,19 @@
     return sharedInstance;
 }
 
--(void)loadItems
+-(void)loadFriendsWithCompletion:(void (^)(VKResponse *))completeion
 {
-    
+	VKRequest *friendsRequest = [[VKApi friends] get:@{VK_API_FIELDS : ALL_USER_FIELDS}];
+	[friendsRequest executeWithResultBlock:^(VKResponse *response) {
+		NSLog(@"response:%@", response);
+		//        welf.callResult.text = [NSString stringWithFormat:@"Result: %@", response];
+		//        welf.callingRequest = nil;
+		NSLog(@"%@", response.request.requestTiming);
+	}                                errorBlock:^(NSError *error) {
+		NSLog(@"error:%@", error);
+		//        welf.callResult.text = [NSString stringWithFormat:@"Error: %@", error];
+		//        welf.callingRequest = nil;
+	}];
 }
 
 
