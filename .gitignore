@@ -5,7 +5,7 @@
 *.xcworkspace
 *.xcuserdatad
 .idea
-# old skool
+# old school
 .svn
 
 # osx noise
