@@ -41,5 +41,22 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>LSApplicationQueriesSchemes</key>
+    <array>
+        <string>vk</string>
+        <string>vk-share</string>
+        <string>vkauthorize</string>
+    </array>
+    <key>CFBundleURLTypes</key>
+    <array>
+        <dict>
+            <key>CFBundleURLName</key>
+            <string>com.alexx.vkfriends</string>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <string>alexxvkf</string>
+            </array>
+        </dict>
+    </array>
 </dict>
 </plist>
