@@ -46,7 +46,6 @@ static NSArray *SCOPE = nil;
             
         }
     }];
-    [self vkSdkShouldPresentViewController:self];
 }
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
