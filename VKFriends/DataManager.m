@@ -24,7 +24,7 @@ static NSString *const ALL_USER_FIELDS = @"id,first_name,last_name,sex,bdate,cit
     return sharedInstance;
 }
 
--(void)loadFriendsWithCompletion:(void (^)(VKResponse *))completeion
+-(void)loadFriendsWithCompletion:(void (^)(VKResponse * vkResponse))completeion
 {
 	VKRequest *friendsRequest = [[VKApi friends] get:@{VK_API_FIELDS : ALL_USER_FIELDS}];
 	[friendsRequest executeWithResultBlock:^(VKResponse *response) {

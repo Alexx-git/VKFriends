@@ -12,6 +12,6 @@
 @interface DataManager : NSObject
 
 +(DataManager *)sharedInstance;
--(void)loadFriendsWithCompletion:(void (^)(VKResponse *))completeion;
+-(void)loadFriendsWithCompletion:(void (^)(VKResponse * vkResponse))completeion;
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "FriendsViewController.h"
+#import "DataManager.h"
 #import "VKFriend.h"
 #import "VKSdk.h"
 
@@ -31,7 +32,7 @@ static NSArray *SCOPE = nil;
     [[VKSdk instance] setUiDelegate:self];
     [VKSdk wakeUpSession:SCOPE completeBlock:^(VKAuthorizationState state, NSError *error) {
         if (state == VKAuthorizationAuthorized) {
-            //[self startWorking];
+            [self startWorking];
         } else if (error) {
             
             
@@ -56,7 +57,7 @@ static NSArray *SCOPE = nil;
 
 - (void)vkSdkAccessAuthorizationFinishedWithResult:(VKAuthorizationResult *)result {
     if (result.token) {
-        //[self startWorking];
+		[self startWorking];
     } else if (result.error) {
         [[[UIAlertView alloc] initWithTitle:nil message:[NSString stringWithFormat:@"Access denied\n%@", result.error] delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
     }
@@ -72,6 +73,13 @@ static NSArray *SCOPE = nil;
     [self presentViewController:controller animated:YES completion:nil];
 }
 
+- (void)startWorking {
+	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+		[[DataManager sharedInstance] loadFriendsWithCompletion:^(VKResponse * response) {
+			
+		}];
+	});
+}
 
 #pragma mark - UITableViewDelegate methods
 
