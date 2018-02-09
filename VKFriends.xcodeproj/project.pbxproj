@@ -8,11 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		EC3B245211452DE86A523FA6 /* libPods-VKFriends.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F471A65F08AA1F2E05100805 /* libPods-VKFriends.a */; };
-		F520AD5E202CD3CF001201E5 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F520AD5D202CD3CF001201E5 /* Login.storyboard */; };
 		F520AD60202CD3DC001201E5 /* Friends.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F520AD5F202CD3DC001201E5 /* Friends.storyboard */; };
-		F520AD63202CD3FC001201E5 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F520AD62202CD3FC001201E5 /* LoginViewController.m */; };
 		F520AD66202CD409001201E5 /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F520AD65202CD409001201E5 /* FriendsViewController.m */; };
 		F520AD69202CE2F8001201E5 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F520AD68202CE2F8001201E5 /* DataManager.m */; };
+		F520AD6D202E0F42001201E5 /* VKFriend.m in Sources */ = {isa = PBXBuildFile; fileRef = F520AD6C202E0F42001201E5 /* VKFriend.m */; };
 		F584D4F2202CCD3C00CD6B61 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F584D4F1202CCD3C00CD6B61 /* main.m */; };
 		F584D4F5202CCD3C00CD6B61 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F584D4F4202CCD3C00CD6B61 /* AppDelegate.m */; };
 		F584D4FD202CCD3C00CD6B61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F584D4FC202CCD3C00CD6B61 /* Assets.xcassets */; };
@@ -23,14 +22,13 @@
 		2C314B44A2F1456034234CE2 /* Pods-VKFriends.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VKFriends.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VKFriends/Pods-VKFriends.debug.xcconfig"; sourceTree = "<group>"; };
 		C5EC88DCFE21484F53A41A64 /* Pods-VKFriends.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VKFriends.release.xcconfig"; path = "Pods/Target Support Files/Pods-VKFriends/Pods-VKFriends.release.xcconfig"; sourceTree = "<group>"; };
 		F471A65F08AA1F2E05100805 /* libPods-VKFriends.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-VKFriends.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F520AD5D202CD3CF001201E5 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		F520AD5F202CD3DC001201E5 /* Friends.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Friends.storyboard; sourceTree = "<group>"; };
-		F520AD61202CD3FC001201E5 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
-		F520AD62202CD3FC001201E5 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		F520AD64202CD409001201E5 /* FriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsViewController.h; sourceTree = "<group>"; };
 		F520AD65202CD409001201E5 /* FriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsViewController.m; sourceTree = "<group>"; };
 		F520AD67202CE2F8001201E5 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
 		F520AD68202CE2F8001201E5 /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
+		F520AD6B202E0F42001201E5 /* VKFriend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKFriend.h; sourceTree = "<group>"; };
+		F520AD6C202E0F42001201E5 /* VKFriend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKFriend.m; sourceTree = "<group>"; };
 		F584D4ED202CCD3C00CD6B61 /* VKFriends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VKFriends.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F584D4F1202CCD3C00CD6B61 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F584D4F3202CCD3C00CD6B61 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -94,12 +92,11 @@
 				F584D4F4202CCD3C00CD6B61 /* AppDelegate.m */,
 				F520AD67202CE2F8001201E5 /* DataManager.h */,
 				F520AD68202CE2F8001201E5 /* DataManager.m */,
-				F520AD61202CD3FC001201E5 /* LoginViewController.h */,
-				F520AD62202CD3FC001201E5 /* LoginViewController.m */,
+				F520AD6B202E0F42001201E5 /* VKFriend.h */,
+				F520AD6C202E0F42001201E5 /* VKFriend.m */,
 				F520AD64202CD409001201E5 /* FriendsViewController.h */,
 				F520AD65202CD409001201E5 /* FriendsViewController.m */,
 				F584D4FC202CCD3C00CD6B61 /* Assets.xcassets */,
-				F520AD5D202CD3CF001201E5 /* Login.storyboard */,
 				F520AD5F202CD3DC001201E5 /* Friends.storyboard */,
 				F584D4FE202CCD3C00CD6B61 /* LaunchScreen.storyboard */,
 				F584D501202CCD3C00CD6B61 /* Info.plist */,
@@ -180,7 +177,6 @@
 				F520AD60202CD3DC001201E5 /* Friends.storyboard in Resources */,
 				F584D500202CCD3C00CD6B61 /* LaunchScreen.storyboard in Resources */,
 				F584D4FD202CCD3C00CD6B61 /* Assets.xcassets in Resources */,
-				F520AD5E202CD3CF001201E5 /* Login.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,7 +245,7 @@
 				F520AD69202CE2F8001201E5 /* DataManager.m in Sources */,
 				F584D4F5202CCD3C00CD6B61 /* AppDelegate.m in Sources */,
 				F584D4F2202CCD3C00CD6B61 /* main.m in Sources */,
-				F520AD63202CD3FC001201E5 /* LoginViewController.m in Sources */,
+				F520AD6D202E0F42001201E5 /* VKFriend.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
