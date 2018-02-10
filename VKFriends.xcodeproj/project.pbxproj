@@ -11,7 +11,8 @@
 		F520AD60202CD3DC001201E5 /* Friends.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F520AD5F202CD3DC001201E5 /* Friends.storyboard */; };
 		F520AD66202CD409001201E5 /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F520AD65202CD409001201E5 /* FriendsViewController.m */; };
 		F520AD69202CE2F8001201E5 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F520AD68202CE2F8001201E5 /* DataManager.m */; };
-		F520AD6D202E0F42001201E5 /* VKFriend.m in Sources */ = {isa = PBXBuildFile; fileRef = F520AD6C202E0F42001201E5 /* VKFriend.m */; };
+		F520AD79202F1C62001201E5 /* AppDelegate+VKAuthorization.m in Sources */ = {isa = PBXBuildFile; fileRef = F520AD78202F1C62001201E5 /* AppDelegate+VKAuthorization.m */; };
+		F520AD7C202F57F7001201E5 /* FriendTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F520AD7B202F57F7001201E5 /* FriendTableViewCell.m */; };
 		F584D4F2202CCD3C00CD6B61 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F584D4F1202CCD3C00CD6B61 /* main.m */; };
 		F584D4F5202CCD3C00CD6B61 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F584D4F4202CCD3C00CD6B61 /* AppDelegate.m */; };
 		F584D4FD202CCD3C00CD6B61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F584D4FC202CCD3C00CD6B61 /* Assets.xcassets */; };
@@ -27,8 +28,10 @@
 		F520AD65202CD409001201E5 /* FriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsViewController.m; sourceTree = "<group>"; };
 		F520AD67202CE2F8001201E5 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
 		F520AD68202CE2F8001201E5 /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
-		F520AD6B202E0F42001201E5 /* VKFriend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKFriend.h; sourceTree = "<group>"; };
-		F520AD6C202E0F42001201E5 /* VKFriend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKFriend.m; sourceTree = "<group>"; };
+		F520AD77202F1C62001201E5 /* AppDelegate+VKAuthorization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+VKAuthorization.h"; sourceTree = "<group>"; };
+		F520AD78202F1C62001201E5 /* AppDelegate+VKAuthorization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+VKAuthorization.m"; sourceTree = "<group>"; };
+		F520AD7A202F57F7001201E5 /* FriendTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendTableViewCell.h; sourceTree = "<group>"; };
+		F520AD7B202F57F7001201E5 /* FriendTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendTableViewCell.m; sourceTree = "<group>"; };
 		F584D4ED202CCD3C00CD6B61 /* VKFriends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VKFriends.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F584D4F1202CCD3C00CD6B61 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F584D4F3202CCD3C00CD6B61 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -90,12 +93,14 @@
 			children = (
 				F584D4F3202CCD3C00CD6B61 /* AppDelegate.h */,
 				F584D4F4202CCD3C00CD6B61 /* AppDelegate.m */,
+				F520AD77202F1C62001201E5 /* AppDelegate+VKAuthorization.h */,
+				F520AD78202F1C62001201E5 /* AppDelegate+VKAuthorization.m */,
 				F520AD67202CE2F8001201E5 /* DataManager.h */,
 				F520AD68202CE2F8001201E5 /* DataManager.m */,
-				F520AD6B202E0F42001201E5 /* VKFriend.h */,
-				F520AD6C202E0F42001201E5 /* VKFriend.m */,
 				F520AD64202CD409001201E5 /* FriendsViewController.h */,
 				F520AD65202CD409001201E5 /* FriendsViewController.m */,
+				F520AD7A202F57F7001201E5 /* FriendTableViewCell.h */,
+				F520AD7B202F57F7001201E5 /* FriendTableViewCell.m */,
 				F584D4FC202CCD3C00CD6B61 /* Assets.xcassets */,
 				F520AD5F202CD3DC001201E5 /* Friends.storyboard */,
 				F584D4FE202CCD3C00CD6B61 /* LaunchScreen.storyboard */,
@@ -242,10 +247,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F520AD66202CD409001201E5 /* FriendsViewController.m in Sources */,
+				F520AD79202F1C62001201E5 /* AppDelegate+VKAuthorization.m in Sources */,
 				F520AD69202CE2F8001201E5 /* DataManager.m in Sources */,
 				F584D4F5202CCD3C00CD6B61 /* AppDelegate.m in Sources */,
 				F584D4F2202CCD3C00CD6B61 /* main.m in Sources */,
-				F520AD6D202E0F42001201E5 /* VKFriend.m in Sources */,
+				F520AD7C202F57F7001201E5 /* FriendTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

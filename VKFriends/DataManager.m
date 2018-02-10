@@ -24,14 +24,17 @@ static NSString *const ALL_USER_FIELDS = @"id,first_name,last_name,sex,bdate,cit
     return sharedInstance;
 }
 
--(void)loadFriendsWithCompletion:(void (^)(VKResponse * vkResponse))completeion
+-(void)loadFriendsWithCompletion:(void (^)(VKResponse * vkResponse))completion
 {
 	VKRequest *friendsRequest = [[VKApi friends] get:@{VK_API_FIELDS : ALL_USER_FIELDS}];
 	[friendsRequest executeWithResultBlock:^(VKResponse *response) {
-		NSLog(@"response:%@", response);
+		//NSLog(@"response:%@", response);
+        NSLog(@"response:%@", response.parsedModel);
+
 		//        welf.callResult.text = [NSString stringWithFormat:@"Result: %@", response];
 		//        welf.callingRequest = nil;
-		NSLog(@"%@", response.request.requestTiming);
+		//NSLog(@"%@", response.request.requestTiming);
+        completion(response);
 	}                                errorBlock:^(NSError *error) {
 		NSLog(@"error:%@", error);
 		//        welf.callResult.text = [NSString stringWithFormat:@"Error: %@", error];
