@@ -10,12 +10,9 @@
 #import "DataManager.h"
 
 
-@interface AppDelegate (VKAuthorization)<VKSdkDelegate, VKSdkUIDelegate>
 
-@end
 
 static NSString *const TOKEN_KEY = @"my_application_access_token";
-//static NSString *const NEXT_CONTROLLER_SEGUE_ID = @"START_WORK";
 static NSArray *SCOPE = nil;
 static VKAuthorizationState authState = VKAuthorizationUnknown;
 NSString * const kVKAuthSuscessNotification = @"Authorization finished with success";
@@ -50,7 +47,7 @@ NSString * const kVKAuthSuscessNotification = @"Authorization finished with succ
             
         }
         else if (error) {
-            [[[UIAlertView alloc] initWithTitle:nil message:[error description] delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
+            [self presentAlertWithMessage:[error description]];
             authState = VKAuthorizationError;
         }
         else{
@@ -67,19 +64,29 @@ NSString * const kVKAuthSuscessNotification = @"Authorization finished with succ
         NSNotificationCenter * notificationCenter = [NSNotificationCenter defaultCenter];
         [notificationCenter postNotificationName:kVKAuthSuscessNotification object:nil];
     } else if (result.error) {
-        [[[UIAlertView alloc] initWithTitle:nil message:[NSString stringWithFormat:@"Access denied\n%@", result.error] delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
+        [self presentAlertWithMessage:[NSString stringWithFormat:@"Access denied\n%@", result.error]];
     }
 }
 
 - (void)vkSdkUserAuthorizationFailed {
-    [[[UIAlertView alloc] initWithTitle:nil message:@"Access denied" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
-    //[self.navigationController popToRootViewControllerAnimated:YES];
+    [self presentAlertWithMessage:@"Access denied"];
 }
 
 - (void)vkSdkShouldPresentViewController:(UIViewController *)controller {
-    //[self.navigationController.topViewController presentViewController:controller animated:YES completion:nil];
-    //[self presentViewController:controller animated:YES completion:nil];
     [self.window.rootViewController presentViewController:controller animated:YES completion:nil];
+}
+
+- (void)vkSdkNeedCaptchaEnter:(VKError *)captchaError {
+    VKCaptchaViewController *vc = [VKCaptchaViewController captchaControllerWithError:captchaError];
+    [self.window.rootViewController presentViewController:vc animated:YES completion:nil];
+}
+
+-(void)presentAlertWithMessage:(nullable NSString *)message
+{
+    UIAlertController * alertController = [UIAlertController alertControllerWithTitle:nil message:message preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction * okAction = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:nil];
+    [alertController addAction:okAction];
+    [self.window.rootViewController presentViewController:alertController animated:YES completion:nil];
 }
 
 @end

@@ -28,17 +28,9 @@ static NSString *const ALL_USER_FIELDS = @"id,first_name,last_name,sex,bdate,cit
 {
 	VKRequest *friendsRequest = [[VKApi friends] get:@{VK_API_FIELDS : ALL_USER_FIELDS}];
 	[friendsRequest executeWithResultBlock:^(VKResponse *response) {
-		//NSLog(@"response:%@", response);
-        NSLog(@"response:%@", response.parsedModel);
-
-		//        welf.callResult.text = [NSString stringWithFormat:@"Result: %@", response];
-		//        welf.callingRequest = nil;
-		//NSLog(@"%@", response.request.requestTiming);
         completion(response);
 	}                                errorBlock:^(NSError *error) {
 		NSLog(@"error:%@", error);
-		//        welf.callResult.text = [NSString stringWithFormat:@"Error: %@", error];
-		//        welf.callingRequest = nil;
 	}];
 }
 

@@ -11,7 +11,7 @@
 
 extern NSString * const kVKAuthSuscessNotification;
 
-@interface AppDelegate (VKAuthorization)
+@interface AppDelegate (VKAuthorization)<VKSdkDelegate, VKSdkUIDelegate>
 
 +(AppDelegate *)appDelegate;
 +(VKAuthorizationState)authState;

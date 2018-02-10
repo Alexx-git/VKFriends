@@ -110,8 +110,6 @@ static NSString * const reuseIdentifier = @"FriendsTableViewCell";
     NSURL * photoURL = [NSURL URLWithString:friend.photo_100];
     [cell.photoView sd_setImageWithURL:photoURL];
     cell.nameLabel.text = [NSString stringWithFormat:@"%@ %@", friend.first_name, friend.last_name];
-    //[friend.first_name stringByAppendingString:friend.last_name];;
-    //cell.detailTextLabel.text = friend.last_name;
     return cell;
 }
 
