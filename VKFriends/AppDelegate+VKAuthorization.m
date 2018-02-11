@@ -9,14 +9,12 @@
 #import "AppDelegate+VKAuthorization.h"
 #import "DataManager.h"
 
-
-
-
+static NSString *const kVKAppId = @"6365157";
 static NSString *const TOKEN_KEY = @"my_application_access_token";
 static NSArray *SCOPE = nil;
 static VKAuthorizationState authState = VKAuthorizationUnknown;
-NSString * const kVKAuthSuscessNotification = @"Authorization finished with success";
-
+NSString * const kVKAuthSuccessNotification = @"Authorization finished with success";
+NSString * const kVKAuthClearNotification = @"Authorization cleaning";
 
 @implementation AppDelegate (VKAuthorization)
 
@@ -34,7 +32,7 @@ NSString * const kVKAuthSuscessNotification = @"Authorization finished with succ
 {
     authState = VKAuthorizationUnknown;
     SCOPE = @[VK_PER_FRIENDS, VK_PER_WALL, VK_PER_AUDIO, VK_PER_PHOTOS, VK_PER_NOHTTPS, VK_PER_EMAIL, VK_PER_MESSAGES];
-    [[VKSdk initializeWithAppId:@"6365157"] registerDelegate:self];
+    [[VKSdk initializeWithAppId:kVKAppId] registerDelegate:self];
     [[VKSdk instance] setUiDelegate:self];
     [VKSdk wakeUpSession:SCOPE completeBlock:^(VKAuthorizationState state, NSError *error) {
         if (state == VKAuthorizationAuthorized) {
@@ -42,12 +40,12 @@ NSString * const kVKAuthSuscessNotification = @"Authorization finished with succ
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 NSNotificationCenter * notificationCenter = [NSNotificationCenter defaultCenter];
-                [notificationCenter postNotificationName:kVKAuthSuscessNotification object:nil];
+                [notificationCenter postNotificationName:kVKAuthSuccessNotification object:nil];
             });
             
         }
         else if (error) {
-            [self presentAlertWithMessage:[error description]];
+            [self presentAlertWithMessage:error.localizedDescription];
             authState = VKAuthorizationError;
         }
         else{
@@ -62,14 +60,15 @@ NSString * const kVKAuthSuscessNotification = @"Authorization finished with succ
 - (void)vkSdkAccessAuthorizationFinishedWithResult:(VKAuthorizationResult *)result {
     if (result.token) {
         NSNotificationCenter * notificationCenter = [NSNotificationCenter defaultCenter];
-        [notificationCenter postNotificationName:kVKAuthSuscessNotification object:nil];
-    } else if (result.error) {
-        [self presentAlertWithMessage:[NSString stringWithFormat:@"Access denied\n%@", result.error]];
+        [notificationCenter postNotificationName:kVKAuthSuccessNotification object:nil];
+    }
+    else if (result.error) {
+        [self presentAlertWithMessage:[NSString stringWithFormat:@"Authorization Failed\n%@", result.error.localizedDescription]];
     }
 }
 
 - (void)vkSdkUserAuthorizationFailed {
-    [self presentAlertWithMessage:@"Access denied"];
+    [self presentAlertWithMessage:@"Authorization Failed"];
 }
 
 - (void)vkSdkShouldPresentViewController:(UIViewController *)controller {
@@ -84,9 +83,19 @@ NSString * const kVKAuthSuscessNotification = @"Authorization finished with succ
 -(void)presentAlertWithMessage:(nullable NSString *)message
 {
     UIAlertController * alertController = [UIAlertController alertControllerWithTitle:nil message:message preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction * okAction = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:nil];
+    UIAlertAction * okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+        [self vkClearAuthorization];
+    }];
     [alertController addAction:okAction];
     [self.window.rootViewController presentViewController:alertController animated:YES completion:nil];
 }
+
+-(void)vkClearAuthorization
+{
+    [VKSdk forceLogout];
+    NSNotificationCenter * notificationCenter = [NSNotificationCenter defaultCenter];
+    [notificationCenter postNotificationName:kVKAuthClearNotification object:nil];
+}
+
 
 @end

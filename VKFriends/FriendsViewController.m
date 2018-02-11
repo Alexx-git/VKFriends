@@ -13,7 +13,7 @@
 
 typedef NS_ENUM(NSUInteger, LoadingStatus)
 {
-    LoadingUnknown,
+    LoadingNone,
     LoadingInProcess,
     LoadingSuccess,
     LoadingFailure,
@@ -22,39 +22,28 @@ typedef NS_ENUM(NSUInteger, LoadingStatus)
 
 @interface FriendsViewController ()
 
-@property (assign, nonatomic) BOOL authorized;
-
 @property (strong, nonatomic) NSArray * friends;
-
+@property (assign, nonatomic) LoadingStatus loadingStatus;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *signOutButton;
 
 @end
 
-static LoadingStatus loadingStatus = LoadingUnknown;
 static NSString * const reuseIdentifier = @"FriendsTableViewCell";
-
 
 @implementation FriendsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.loadingStatus = LoadingNone;
 }
 
 -(void)viewWillAppear:(BOOL)animated
 {
-    AppDelegate * appDelegate = [AppDelegate appDelegate];
-    [appDelegate startVK];
+    [self vkAuthorization];
+    NSNotificationCenter * notificationCenter = [NSNotificationCenter defaultCenter];
+    [notificationCenter addObserver:self selector:@selector(didReceiveVKAuthClearNotification:) name:kVKAuthClearNotification object:nil];
     [super viewWillAppear:animated];
-    VKAuthorizationState authState = [AppDelegate authState];
-    if (authState == VKAuthorizationAuthorized)
-    {
-        [self updateData];
-    } else
-    {
-        NSNotificationCenter * notificationCenter = [NSNotificationCenter defaultCenter];
-        [notificationCenter addObserver:self selector:@selector(didReceiveVKAuthSuccessNotification:) name:kVKAuthSuscessNotification object:nil];
-    }
-    //[self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:reuseIdentifier];
 }
 
 -(void)viewWillDisappear:(BOOL)animated
@@ -67,14 +56,21 @@ static NSString * const reuseIdentifier = @"FriendsTableViewCell";
 -(void)didReceiveVKAuthSuccessNotification:(NSNotification *)notification
 {
     [self loadData];
+    [self showSignOutButton];
+}
+
+-(void)didReceiveVKAuthClearNotification:(NSNotification *)notification
+{
+    [self resetAuth];
 }
 
 
+
 -(void)loadData {
-    loadingStatus = LoadingInProcess;
+    self.loadingStatus = LoadingInProcess;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [[DataManager sharedInstance] loadFriendsWithCompletion:^(VKResponse * response) {
-            loadingStatus = LoadingSuccess;
+            self.loadingStatus = LoadingSuccess;
             self.friends = ((VKUsersArray *)response.parsedModel).items;
             [self updateData];
         }];
@@ -107,11 +103,60 @@ static NSString * const reuseIdentifier = @"FriendsTableViewCell";
 {
     FriendTableViewCell * cell = [self.tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
     VKUser * friend = self.friends[indexPath.row];
-    NSURL * photoURL = [NSURL URLWithString:friend.photo_100];
+    NSURL * photoURL = [NSURL URLWithString:friend.photo_max];
+    
     [cell.photoView sd_setImageWithURL:photoURL];
     cell.nameLabel.text = [NSString stringWithFormat:@"%@ %@", friend.first_name, friend.last_name];
     return cell;
 }
+
+- (IBAction)signOutButtonPressed:(id)sender
+{
+    [VKSdk forceLogout];
+    [self resetAuth];
+}
+
+-(void)vkAuthorization
+{
+    AppDelegate * appDelegate = [AppDelegate appDelegate];
+    [appDelegate startVK];
+    VKAuthorizationState authState = [AppDelegate authState];
+    if (self.loadingStatus == LoadingNone)
+    {
+        if (authState == VKAuthorizationAuthorized)
+        {
+            [self updateData];
+        }
+        else
+        {
+            NSNotificationCenter * notificationCenter = [NSNotificationCenter defaultCenter];
+            [notificationCenter addObserver:self selector:@selector(didReceiveVKAuthSuccessNotification:) name:kVKAuthSuccessNotification object:nil];
+        }
+    }
+}
+
+-(void)hideSignOutButton
+{
+    self.signOutButton = self.navigationItem.rightBarButtonItem;
+    self.navigationItem.rightBarButtonItem = nil;
+    [self.view setNeedsDisplay];
+}
+
+-(void)showSignOutButton
+{
+    self.navigationItem.rightBarButtonItem = self.signOutButton;
+    [self.view setNeedsDisplay];
+}
+
+-(void)resetAuth
+{
+    
+    [self hideSignOutButton];
+    self.friends = nil;
+    [self updateData];
+    [self vkAuthorization];
+}
+
 
 
 @end

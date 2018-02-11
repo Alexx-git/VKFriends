@@ -9,7 +9,8 @@
 #import "AppDelegate.h"
 #import "VKSdk.h"
 
-extern NSString * const kVKAuthSuscessNotification;
+extern NSString * const kVKAuthSuccessNotification;
+extern NSString * const kVKAuthClearNotification;
 
 @interface AppDelegate (VKAuthorization)<VKSdkDelegate, VKSdkUIDelegate>
 

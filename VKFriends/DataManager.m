@@ -29,7 +29,7 @@ static NSString *const ALL_USER_FIELDS = @"id,first_name,last_name,sex,bdate,cit
 	VKRequest *friendsRequest = [[VKApi friends] get:@{VK_API_FIELDS : ALL_USER_FIELDS}];
 	[friendsRequest executeWithResultBlock:^(VKResponse *response) {
         completion(response);
-	}                                errorBlock:^(NSError *error) {
+	} errorBlock:^(NSError *error) {
 		NSLog(@"error:%@", error);
 	}];
 }
